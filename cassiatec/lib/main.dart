@@ -8,10 +8,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Cassiatec',
       debugShowCheckedModeBanner: false,
-      home: const MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
@@ -24,7 +24,7 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Inicio'),
-        backgroundColor: Color.fromRGBO(244, 67, 54, 1),
+        backgroundColor: const Color.fromRGBO(244, 67, 54, 1),
         automaticallyImplyLeading: false,
       ),
       body: Center(
@@ -52,23 +52,23 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image(
+            const Image(
               image: AssetImage("assets/InsigniaSRC.png"),
               width: 200,
               height: 200,
             ),
-            Text(
+            const Text(
               'Correo: holamundo@gmail.com',
               style: TextStyle(fontSize: 18),
             ),
-            Text(
+            const Text(
               'Contraseña: 123',
               style: TextStyle(fontSize: 18),
             ),
             const SizedBox(height: 24),
             TextFormField(
               controller: _emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Correo electrónico',
                 prefixIcon: Icon(
                   Icons.email,
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 16),
             TextFormField(
               controller: _passwordController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Contraseña',
                 prefixIcon: Icon(
                   Icons.lock, // Puedes cambiar a otro icono si lo deseas
@@ -89,11 +89,11 @@ class _LoginPageState extends State<LoginPage> {
               obscureText: true,
             ),
             const SizedBox(height: 30),
-            Text(
+            const Text(
               'You are new?',
               style: TextStyle(
                 fontSize: 18,
-                color: const Color.fromRGBO(244, 67, 54, 1),
+                color: Color.fromRGBO(244, 67, 54, 1),
               ),
               textAlign: TextAlign.right,
             ),
@@ -106,13 +106,13 @@ class _LoginPageState extends State<LoginPage> {
                     _passwordController.text == '123') {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => HomePage()),
+                    MaterialPageRoute(builder: (context) => const HomePage()),
                   );
                 }
               },
               child: const Text('Login'),
               style: ElevatedButton.styleFrom(
-                primary: Color.fromRGBO(244, 67, 54, 1),
+                primary: const Color.fromRGBO(244, 67, 54, 1),
               ),
             ),
           ],
